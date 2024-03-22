@@ -34,36 +34,36 @@ Em que instalei o conector do MySQL com o driver ODBC e configurei a conexão.
 No power BI, em get data, selecionei a opção OBDC e escolhi o banco de dados que configurei. O banco de dados e tabelas foram criados usando o Workbench, com as queries "script_bd_company.sql" e "insercao_de_dados_e_queries_sql.sql" adaptados do Modulo3/desafio de projeto de:
  https://github.com/julianazanelatto/power_bi_analyst
 
-* Transformação dos dados com o Power Query
+- Transformação dos dados com o Power Query
 
-- Valores de salary de employee convertidos para decimal fixo.
-
-- employee James com Super_ssn null, ele é o gerente do headquartes, portando o dado não será removido.
-
-- Todos os departamentos possuem gerentes.
-
-- Na tabela works_on se encontram as horas de cada employee por projeto. O manager James possui 0 Horas no projeto 20.
-
-- tabelas employee e department mescladas como nova consulta (employee2) usando, respectivamente, colunas Dno e Dnumber. 
-
-- tabelas employee2 e employee mescladas internamente usando, respectivamente, colunas Super_ssn e Ssn. Usei somente a coluna Fname. O employee James (que é gerente) foi removido por não ter supervisor.
-
-- Mesclei as colunas Fname, Minit, e Lname em uma Coluna Full_name com separador de espaço.
-
-- Expandi a tabela dept_location somente com Dlocation e mesclei a coluna Dname com Dlocation usando o separador - em uma nova coluna de nome Departamento-Local
-
-- Dados agrupador por Super_Fname, contagem de linhas: nos dá o números de empregados por gerente 
-
-<img src="agrupar_super.png" alt="numero employees por gerente">
-
-- Eliminei as colunas:  Ssn, Bdate, Address, Super_ssn, department, dependent e works_on e renomeei a consulta para employee-department
-
-- criei uma nova consulta (employee-project) com mesclagem interna usando employee Ssn e works_on Essn, deletei colunas desnecessárias mantendo project name e project hours.
-
-- Fiz 3 gráficos para visualizar os dados
-    - Número de horas por projeto (pizza)
-    - Média salarial por genero (barra)
-    - Número de employee por supervisor (treemap)
+    - Valores de salary de employee convertidos para decimal fixo.
+    
+    - employee James com Super_ssn null, ele é o gerente do headquartes, portando o dado não será removido.
+    
+    - Todos os departamentos possuem gerentes.
+    
+    - Na tabela works_on se encontram as horas de cada employee por projeto. O manager James possui 0 Horas no projeto 20.
+    
+    - tabelas employee e department mescladas como nova consulta (employee2) usando, respectivamente, colunas Dno e Dnumber. 
+    
+    - tabelas employee2 e employee mescladas internamente usando, respectivamente, colunas Super_ssn e Ssn. Usei somente a coluna Fname. O employee James (que é gerente) foi removido por não ter supervisor.
+    
+    - Mesclei as colunas Fname, Minit, e Lname em uma Coluna Full_name com separador de espaço.
+    
+    - Expandi a tabela dept_location somente com Dlocation e mesclei a coluna Dname com Dlocation usando o separador - em uma nova coluna de nome Departamento-Local
+    
+    - Dados agrupador por Super_Fname, contagem de linhas: nos dá o números de empregados por gerente 
+    
+    <img src="agrupar_Super.png" alt="numero employees por gerente">
+    
+    - Eliminei as colunas:  Ssn, Bdate, Address, Super_ssn, department, dependent e works_on e renomeei a consulta para employee-department
+    
+    - criei uma nova consulta (employee-project) com mesclagem interna usando employee Ssn e works_on Essn, deletei colunas desnecessárias mantendo project name e project hours.
+    
+    - Fiz 3 gráficos para visualizar os dados
+        - Número de horas por projeto (pizza)
+        - Média salarial por genero (barra)
+        - Número de employee por supervisor (treemap)
 
 <img src="graficos.png" alt="visualizar dados">
 
